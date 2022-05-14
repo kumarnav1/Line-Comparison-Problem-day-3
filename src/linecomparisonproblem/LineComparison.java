@@ -1,11 +1,14 @@
 package linecomparisonproblem;
+import java.util.Objects;
 import java.util.Scanner;
 public class LineComparison {
     public static void main(String[] args) {
         System.out.println("Welcome to Line Comparison Problem Project");
 
         int x1Point, x2Point, y1Point, y2Point;
-        double totalLength;
+        int p1Point, p2Point, q1Point, q2Point;
+        double totalLength1;
+        double totalLength2;
 
         Scanner sc = new Scanner(System.in);
         System.out.println("Enter x1Point point : ");
@@ -17,13 +20,36 @@ public class LineComparison {
         System.out.println("Enter y2Point point : ");
         y2Point = sc.nextInt();
 
+        System.out.println("Enter x1Point point : ");
+        p1Point = sc.nextInt();
+        System.out.println("Enter x2Point point : ");
+        p2Point = sc.nextInt();
+        System.out.println("Enter y1Point point : ");
+        q1Point = sc.nextInt();
+        System.out.println("Enter y2Point point : ");
+        q2Point = sc.nextInt();
+
         double diffForX = x2Point - x1Point;
         double diffForY = y2Point - y1Point;
         double powForX = Math.pow(diffForX, 2);
         double powForY = Math.pow(diffForY, 2);
         double bothAddition = powForX + powForY;
-        totalLength = Math.sqrt(bothAddition);
+        totalLength1 = Math.sqrt(bothAddition);
 
-        System.out.println("The Length of the Line : " + totalLength);
+        double diffForP = p2Point - p1Point;
+        double diffForQ = q2Point - q1Point;
+        double powForP = Math.pow(diffForP, 2);
+        double powForQ = Math.pow(diffForQ, 2);
+        double bothsAddition = powForP + powForQ;
+        totalLength2 = Math.sqrt(bothsAddition);
+
+        System.out.println("The Length of the Line : " + totalLength1);
+        System.out.println("The Length of the Line : " + totalLength2);
+
+        if(Objects.equals(totalLength1, totalLength2)) {
+            System.out.println("The lines are equal");
+        }
+        else
+            System.out.println("The lines are not equal");
     }
 }
