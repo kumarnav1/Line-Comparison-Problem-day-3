@@ -1,6 +1,8 @@
 package linecomparisonproblem;
+
 import java.util.Objects;
 import java.util.Scanner;
+
 public class LineComparison {
     public static void main(String[] args) {
         System.out.println("Welcome to Line Comparison Problem Project");
@@ -46,10 +48,15 @@ public class LineComparison {
         System.out.println("The Length of the Line : " + totalLength1);
         System.out.println("The Length of the Line : " + totalLength2);
 
-        if(Objects.equals(totalLength1, totalLength2)) {
-            System.out.println("The lines are equal");
-        }
+        String stringOfLength1Var = String.valueOf(totalLength1);
+        String stringOfLength2Var = String.valueOf(totalLength2);
+
+        int valueAfterComparison = stringOfLength1Var.compareTo(stringOfLength2Var);
+        if (valueAfterComparison == 0) {
+            System.out.println("The both lines are equal ");
+        } else if (valueAfterComparison > 0)
+            System.out.println("The lines 1 is greater than line 2");
         else
-            System.out.println("The lines are not equal");
+            System.out.println("The line 2 is greater than line 1");
     }
 }
